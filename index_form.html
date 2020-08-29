@@ -49,13 +49,13 @@
         }
         }
         var msg = "分帳 ";  //回傳訊息字串
-        var first = $('#splitter'+i).val()
+        var first = $('#splitter'+Integer.toString(i)).val()
 		msg = msg + item + " ";
         msg = msg + cost + " ";
         msg = msg + payer+ " ";
         msg = msg + first+ " ";
         for(i=1 ; i<(count+1) ; i++){
-            splitperson = $('#splitter'+i).val()
+            splitperson = $('#splitter'+Integer.toString(i)).val()
             msg = msg + splitperson +" ";
         }
         }
