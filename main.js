@@ -3,10 +3,10 @@ function initializeApp(data) {  //初始化LIFF
 }
 
 function pushMsg(item, cost, payer) {
-  //if (item == '' || cost == '' || payer == ''|| splitter == '') {  //資料檢查
-  //  alert('每個項目都必須輸入！');
-  //  return;
-  //}
+  if (item == '' || cost == '' || payer == '') {  //資料檢查
+  alert('每個項目都必須輸入！');
+  return;
+  }
   var msg = "分帳 ";  //回傳訊息字串
   msg = msg + item + " ";
   msg = msg + cost + " ";
