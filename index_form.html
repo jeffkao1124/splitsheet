@@ -35,12 +35,11 @@
         var userid = data.context.userId; //取得ID
 	}
 	function pushMsg(item, cost, payer) {
-        alert("hi");
+
 		if (item == '' || cost == '' || payer=='') {  //資料檢查
             alert('每個項目都必須輸入！');
             return;
         }
-        alert("hi");
         for(i=1 ; i<(count+1) ; i++){
             if ($('#splitter'+i).val() =='') {
                 alert('每個項目都必須輸入！');
