@@ -11,13 +11,14 @@
     <script>  
         	var countMin = 1;  
         	var countMax = 10; 
-        	var commonName = "T"; 
+            var commonName = "T";
+            var commonsplit = "splitter";
         	var count = countMin;  
         	function addField() {  
         	    if(count == countMax)  
         	        alert("最多"+countMax+"個欄位");  
         	    else      
-        	        document.getElementById("fieldSpace").innerHTML += "<p><strong>分帳者 " + (++count) + '：<input id="split" type="text" name="' + commonName + count + '"></strong></p>';   
+        	        document.getElementById("fieldSpace").innerHTML += "<p><strong>分帳者 " + (++count) + '：<input id="' + commonsplit + count+'" type="text" name="' + commonName + count + '"></strong></p>';   
         	} 
         	function delField() { 
         	    if (count > countMin) { 
@@ -36,10 +37,10 @@
     <br/>
     <p><strong><form>項目：<input id="item" type="text" name="欄位名稱"></strong></p></form>
     <p><strong><form>金額：<input id="cost" type="number" name="欄位名稱" value=""></strong></p></form>
-    <p><strong><form>代墊者：<input id="split" type="text" name="欄位名稱"></strong></p></form>
+    <p><strong><form>代墊者：<input id="payer" type="text" name="欄位名稱"></strong></p></form>
     <p><strong>-------> 代墊者也是分帳者之一</strong></p>
     <form>
-    <p><strong>分帳者 1：<input id="split" type="text" name="T1"></strong></p>  
+    <p><strong>分帳者 1：<input id="splitter1" type="text" name="T1"></strong></p>  
     <span id="fieldSpace"></span> 
     <a href="javascript:" onclick="addField()">增加</a> 
     <a href="javascript:" onclick="delField()">刪除</a> 
