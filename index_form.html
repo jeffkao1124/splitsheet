@@ -32,33 +32,31 @@
 </script> 
 <script>
 	function initializeApp(data) {  //初始化LIFF
-		var userid = data.context.userId; //取得ID
+        var userid = data.context.userId; //取得ID
 	}
 	function pushMsg(item, cost, payer) {
-        
+        alert("hi");
 		if (item == '' || cost == '' || payer=='') {  //資料檢查
             alert('每個項目都必須輸入！');
             return;
         }
-
-        var i=0;
+        alert("hi");
         for(i=1 ; i<(count+1) ; i++){
-            if ($('#splitter'+i).val() ==''){
+            if ($('#splitter'+i).val() =='') {
                 alert('每個項目都必須輸入！');
                 return;
         }
+        
         }
         var msg = "分帳 ";  //回傳訊息字串
-        var first = $('#splitter'+Integer.toString(i)).val()
 		msg = msg + item + " ";
         msg = msg + cost + " ";
         msg = msg + payer+ " ";
-        msg = msg + first+ " ";
         for(i=1 ; i<(count+1) ; i++){
-            splitperson = $('#splitter'+Integer.toString(i)).val()
+            splitperson = $('#splitter'+i).val()
             msg = msg + splitperson +" ";
         }
-        }
+        
 
 		liff.sendMessages([  //推播訊息
 			{ type: 'text',
