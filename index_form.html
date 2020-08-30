@@ -32,12 +32,14 @@
 </script> 
 <script>
 	function initializeApp(data) {  //初始化LIFF
-        var userid = data.context.userId; //取得ID
+        var userid = data.context.userId;
+        var groupid = data.context.groupId; //取得ID
 	}
 	function pushMsg(item, cost, payer) {
 
 		if (item == '' || cost == '' || payer=='') {  //資料檢查
             alert('每個項目都必須輸入！');
+            alert(groupid);
             return;
         }
         for(i=1 ; i<(count+1) ; i++){
