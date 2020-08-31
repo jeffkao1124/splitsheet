@@ -40,17 +40,17 @@ def index():
             history_dic['nickname'] = _data.nickname
             history_list.append(history_dic)
             history_dic = {}
-        final_list=[]
-        for i in range(SetMsgNumber):
-            final_list.append(str(history_list[i]['nickname']))
-        new_list=[]
-        for i in final_list:
-            if not i in new_list:
-                new_list.append(i)
+        # final_list=[]
+        # for i in range(SetMsgNumber):
+        #     final_list.append(str(history_list[i]['nickname']))
+        # new_list=[]
+        # for i in final_list:
+        #     if not i in new_list:
+        #         new_list.append(i)
 
-        output_text=""
-        for i in range(SetMsgNumber):
-            output_text=output_text + new_list[i]+' '
+        # output_text=""
+        # for i in range(SetMsgNumber):
+        #     output_text=output_text + new_list[i]+' '
         a=history_list[0]['nickname']
         
         # history_dic = {}
