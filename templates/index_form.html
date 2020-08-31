@@ -110,7 +110,7 @@
 
     <input type="checkbox" id="cAll" name="cAll" onclick="checkAll(this, 'c14')" />全選<br/> 
     {% for list in new_list %}
-    <input type="checkbox" id="{{ list.nickname }}" name="c14" value="1" />{{ list.nickname }}<br/> 
+    <input type="checkbox" id="{{ list }}" name="c14" value="1" />{{ list }}<br/> 
     {% endfor %}
     <!--<input type="checkbox" id="{{ final_list.1 }}" name="c14" value="2" />{{ final_list.1 }}<br/> 
     <input type="checkbox" id="{{ final_list.2 }}" name="c14" value="3" />{{ final_list.2 }}<br/> 
