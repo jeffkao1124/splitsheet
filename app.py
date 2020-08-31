@@ -45,7 +45,7 @@ def index():
     
     #selfgroupId = groupId
 
-    return render_template('index_home.html',**locals())
+    return render_template('index_form.html',**locals())
 
 if __name__ =="__main__":
     app.run()
