@@ -50,12 +50,11 @@ def index():
         output_text=""
         for i in range(SetMsgNumber):
             output_text=output_text + final_list[i]+' '
-        a=history_list[0]['nickname']
 
 
         return render_template('index_form.html',**locals())
 
-    return render_template('index_form.html',**locals())
+    return render_template('home.html',**locals())
 
 @app.route('/submit',methods={'Post','Get'})
 def submit():
