@@ -27,26 +27,31 @@ class usermessage(db.Model):
     message = db.Column(db.Text)
     birth_date = db.Column(db.TIMESTAMP)
 
-@app.route('/')
+@app.route('/',methods=['POST','GET'])
 def index():
+    if request.method == 'POST':
+        groupId = 0
+        groupId = request.values['groupid']
+        return groupId
+
     return render_template('index_form.html')
 
 @app.route('/submit',methods={'Post','Get'})
 def submit():
-    groupId =0
+    groupId = 0
     groupId = request.values['groupid']
-    data_UserData = usermessage.query.order_by(usermessage.birth_date.desc()).all()
-    history_dic = {}
-    history_list = []
-    for _data in data_UserData:
-        history_dic['user_id'] = _data.user_id
-        history_dic['group_id'] = _data.group_id
-        history_dic['message'] = _data.message
-        history_dic['account'] = _data.account
-        history_list.append(history_dic)
-        history_dic = {}
+    # data_UserData = usermessage.query.order_by(usermessage.birth_date.desc()).all()
+    # history_dic = {}
+    # history_list = []
+    # for _data in data_UserData:
+    #     history_dic['user_id'] = _data.user_id
+    #     history_dic['group_id'] = _data.group_id
+    #     history_dic['message'] = _data.message
+    #     history_dic['account'] = _data.account
+    #     history_list.append(history_dic)
+    #     history_dic = {}
 
-    a = history_list[0]['message']
+    # a = history_list[0]['message']
     
     #selfgroupId = groupId
 
