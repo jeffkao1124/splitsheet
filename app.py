@@ -46,9 +46,9 @@ def index():
         b = groupId
 
 
-        return render_template('index_form.html')
+        return render_template('index_form.html',**locals())
 
-    return render_template('index_form.html')
+    return render_template('index_form.html',**locals())
 
 @app.route('/submit',methods={'Post','Get'})
 def submit():
