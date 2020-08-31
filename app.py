@@ -13,7 +13,7 @@ app.config[
     'SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
 db = SQLAlchemy(app)
-
+groupId=0
 class usermessage(db.Model):
     __tablename__ ='usermessage'
     id = db.Column(db.String(50), primary_key=True)
@@ -29,10 +29,12 @@ class usermessage(db.Model):
 
 @app.route('/',methods=['POST','GET'])
 def index():
-    if request.method == 'POST':
-        groupId = 1
-        groupId = request.values['groupId']
-        return groupId
+    if groupId == 0:
+        return redirect(url_for('index',groupId = request.values['groupId'] ))
+    # if request.method == 'POST':
+    #     groupId = 1
+    #     groupId = request.values['groupId']
+    #     return groupId
 
     return render_template('index_form.html')
 
