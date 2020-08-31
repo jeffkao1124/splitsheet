@@ -109,7 +109,7 @@
     <p><strong>-------代墊者也是分帳者之一</strong></p>
 
     <input type="checkbox" id="cAll" name="cAll" onclick="checkAll(this, 'c14')" />全選<br/> 
-    {% for list in history_list %}
+    {% for list in new_list %}
     <input type="checkbox" id="{{ list.nickname }}" name="c14" value="1" />{{ list.nickname }}<br/> 
     {% endfor %}
     <!--<input type="checkbox" id="{{ final_list.1 }}" name="c14" value="2" />{{ final_list.1 }}<br/> 

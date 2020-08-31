@@ -42,10 +42,10 @@ def index():
         final_list=[]
         for i in range(SetMsgNumber):
             final_list.append(str(history_list[i]['nickname']))
-        #new_list=[]
-        #for i in final_list:
-        #     if not i in new_list:
-        #         new_list.append(i)
+        new_list=[]
+        for i in final_list:
+            if not i in new_list:
+                new_list.append(i)
 
         output_text=""
         for i in range(SetMsgNumber):
