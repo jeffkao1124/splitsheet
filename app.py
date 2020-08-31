@@ -31,7 +31,7 @@ class usermessage(db.Model):
 def index():
     if request.method == 'POST':
         groupId = 0
-        groupId = request.values['groupid']
+        groupId = request.values['groupId']
         return groupId
 
     return render_template('index_form.html')
