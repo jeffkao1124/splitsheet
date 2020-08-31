@@ -29,7 +29,7 @@ class usermessage(db.Model):
 
 @app.route('/',methods={'Post','Get'})
 def index():
-    groupId = request.args.get('groupid')
+    #groupId = request.args.get('groupid')
     data_UserData = usermessage.query.order_by(usermessage.birth_date.desc()).all()
     history_dic = {}
     history_list = []
