@@ -51,6 +51,7 @@ def index():
         output_text=""
         for i in range(SetMsgNumber):
             output_text=output_text + new_list[i]+' '
+        a=history_list[0]['nickname']
         
         # history_dic = {}
         # history_list = []
