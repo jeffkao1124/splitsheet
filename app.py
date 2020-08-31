@@ -29,7 +29,10 @@ class usermessage(db.Model):
 
 @app.route('/',methods={'Post','Get'})
 def index():
-    #groupId = request.args.get('groupid')
+    return render_template('index_form.html')
+
+def submit():
+    groupId = request.values['groupid']
     data_UserData = usermessage.query.order_by(usermessage.birth_date.desc()).all()
     history_dic = {}
     history_list = []
@@ -45,7 +48,7 @@ def index():
     
     #selfgroupId = groupId
 
-    return render_template('index_form.html',**locals())
+    return groupId
 
 if __name__ =="__main__":
     app.run()
