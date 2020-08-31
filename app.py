@@ -1,4 +1,4 @@
-from flask import Flask, request, abort, redirect, url_for
+from flask import Flask, request, abort
 from flask_sqlalchemy import SQLAlchemy
 from flask import render_template
 from datetime import datetime
@@ -29,12 +29,24 @@ class usermessage(db.Model):
 
 @app.route('/',methods=['POST','GET'])
 def index():
-    if groupId == 0:
-        return redirect(url_for('index',groupId = request.values['groupId'] ))
-    # if request.method == 'POST':
-    #     groupId = 1
-    #     groupId = request.values['groupId']
-    #     return groupId
+    if request.method == 'POST':
+        groupId = request.values['groupId']
+        data_UserData = usermessage.query.order_by(usermessage.birth_date.desc()).all()
+        history_dic = {}
+        history_list = []
+        for _data in data_UserData:
+            history_dic['user_id'] = _data.user_id
+            history_dic['group_id'] = _data.group_id
+            history_dic['message'] = _data.message
+            history_dic['account'] = _data.account
+            history_list.append(history_dic)
+            history_dic = {}
+
+        a = history_list[0]['group_id']
+        b = groupId
+
+
+        return render_template('index_form.html')
 
     return render_template('index_form.html')
 
@@ -42,18 +54,18 @@ def index():
 def submit():
     groupId = 0
     groupId = request.values['groupid']
-    # data_UserData = usermessage.query.order_by(usermessage.birth_date.desc()).all()
-    # history_dic = {}
-    # history_list = []
-    # for _data in data_UserData:
-    #     history_dic['user_id'] = _data.user_id
-    #     history_dic['group_id'] = _data.group_id
-    #     history_dic['message'] = _data.message
-    #     history_dic['account'] = _data.account
-    #     history_list.append(history_dic)
-    #     history_dic = {}
+    data_UserData = usermessage.query.order_by(usermessage.birth_date.desc()).all()
+    history_dic = {}
+    history_list = []
+    for _data in data_UserData:
+        history_dic['user_id'] = _data.user_id
+        history_dic['group_id'] = _data.group_id
+        history_dic['message'] = _data.message
+        history_dic['account'] = _data.account
+        history_list.append(history_dic)
+        history_dic = {}
 
-    # a = history_list[0]['message']
+    a = history_list[0]['message']
     
     #selfgroupId = groupId
 
