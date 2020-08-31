@@ -75,7 +75,7 @@
     
 		liff.init(function (data) {  //初始化LIFF
             initializeApp(data);
-            alert(groupid);
+            document.getElementById('post_groupID').value =groupid;
 		});
 		
 		$('#sure').click(function (e) {  //按下確定鈕
@@ -131,7 +131,7 @@
 <div>
     <h1>歡迎進入分帳</h1>
     <form method='post' action="{{url_for ('index')}}">
-        <p><input type="hidden" name="groupId" value=groupid></p>
+        <p><input id='post_groupID' type="hidden" name="groupId" value='0'></p>
         <p><button type="submit">點我</button></p>
     </form>
 </div>    
