@@ -1,2 +1,2 @@
-<!-- ¥H HTML ÀÉ¬°­º­¶ -->
-<?php header( 'Location: /index_form.html' ) ;  ?>
+<!-- ï¿½H HTML ï¿½É¬ï¿½ï¿½ï¿½ï¿½ï¿½ -->
+<?php header( 'Location: /templates/index_form.html' ) ;  ?>
