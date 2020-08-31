@@ -83,27 +83,30 @@
 </script>
 </head>
 <body>
-<!--<div>
-    <h1>歡迎進入分帳</h1>
-    <form method='post' action="{{url_for ('index')}}">
-        <p><input id='post_groupID' type="hidden" name="groupId" value='0'></p>
-        <p><button type="submit">點我</button></p>
-    </form>
-</div> -->   
+
 <div align="center">
     <br><img style="float: center" src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-9/118591971_3901929859834211_9155588508050284823_o.jpg?_nc_cat=107&_nc_sid=8024bb&_nc_ohc=ijfpRatlcXQAX-dLZNp&_nc_ht=scontent-tpe1-1.xx&oh=b3e5d8e6be58665e1930d6581bf5c96d&oe=5F6DA126" alt="logo" width="110" height="110"/></br><p></p><h3>Welcome to</h3></p><h3><span style="background-color: #914c53; color: #ffffff;">Account Mastiff</span></h3>
     <br/>
+    <h1>
+    {% for person in history_list %}
+    <ul>
+        <li>{{person.nickname}}</li>
+    </ul>
+    {% endfor %}
+    </h1>
     <p><strong><form>項目：<input id="item" type="text" name="欄位名稱"></strong></p></form>
     <p><strong><form>金額：<input id="cost" type="number" name="欄位名稱" value=""></strong></p></form>
     <p><strong><form>代墊者：<input id="payer" type="text" name="欄位名稱"></strong></p></form>
     <p><strong>-------代墊者也是分帳者之一</strong></p>
+    <!--<input id="one-checkbox" type="checkbox" value="好學生"/>-->
+
     <form>
         <p><strong>分帳者 1：<input id="splitter1" type="text" name="T1"></strong></p>  
         <p> {{ output_text }} </p>
         <span id="fieldSpace"></span> 
         <a href="javascript:" onclick="addField()">增加</a> 
         <a href="javascript:" onclick="delField()">刪除</a> 
-    </form>  
+    </form>
     <br/>
 	<button id="sure">確認送出</button>
 </div>
