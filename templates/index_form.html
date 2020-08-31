@@ -35,6 +35,7 @@
         var userid = data.context.userId;
         var groupid = data.context.groupId;
         alert(groupid); //取得ID
+        document.getElementById('post_groupID').value =groupid;
 
 	}
 	function pushMsg(item, cost, payer) {
@@ -75,7 +76,6 @@
     
 		liff.init(function (data) {  //初始化LIFF
             initializeApp(data);
-            document.getElementById('post_groupID').value =groupid;
 		});
 		
 		$('#sure').click(function (e) {  //按下確定鈕

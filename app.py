@@ -30,7 +30,7 @@ class usermessage(db.Model):
 @app.route('/',methods=['POST','GET'])
 def index():
     if request.method == 'POST':
-        groupId = 0
+        groupId = 1
         groupId = request.values['groupId']
         return groupId
 
