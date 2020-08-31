@@ -96,22 +96,23 @@
 <div align="center">
     <br><img style="float: center" src="https://scontent-tpe1-1.xx.fbcdn.net/v/t1.0-9/118591971_3901929859834211_9155588508050284823_o.jpg?_nc_cat=107&_nc_sid=8024bb&_nc_ohc=ijfpRatlcXQAX-dLZNp&_nc_ht=scontent-tpe1-1.xx&oh=b3e5d8e6be58665e1930d6581bf5c96d&oe=5F6DA126" alt="logo" width="110" height="110"/></br><p></p><h3>Welcome to</h3></p><h3><span style="background-color: #914c53; color: #ffffff;">Account Mastiff</span></h3>
     <br/>
-    <h1 style="font-size:16px;">
-    {% for person in history_list %}
-    <ul>
-        <li>{{person.nickname}}</li>
-    </ul>
-    {% endfor %}
-    </h1>
     <p><strong><form>項目：<input id="item" type="text" name="欄位名稱"></strong></p></form>
     <p><strong><form>金額：<input id="cost" type="number" name="欄位名稱" value=""></strong></p></form>
-    <p><strong><form>代墊者：<input id="payer" type="text" name="欄位名稱"></strong></p></form>
+    <!--<p><strong><form>代墊者：<input id="payer" type="text" name="欄位名稱"></strong></p></form>-->
+    <select>
+        <option>請選擇代墊者</option>
+        {% for list in new_list %}
+        <option>{{ list }}</option>
+        {% endfor %}
+
+    </select>
     <p><strong>-------代墊者也是分帳者之一</strong></p>
 
     <input type="checkbox" id="cAll" name="cAll" onclick="checkAll(this, 'c14')" />全選<br/> 
     {% for list in new_list %}
     <input type="checkbox" id="{{ list }}" name="c14" value="1" />{{ list }}<br/> 
     {% endfor %}
+
     <!--<input type="checkbox" id="{{ final_list.1 }}" name="c14" value="2" />{{ final_list.1 }}<br/> 
     <input type="checkbox" id="{{ final_list.2 }}" name="c14" value="3" />{{ final_list.2 }}<br/> 
     <input type="checkbox" id="{{ final_list.3 }}" name="c14" value="4" />{{ final_list.3 }}<br/>-->
