@@ -27,10 +27,11 @@ class usermessage(db.Model):
     message = db.Column(db.Text)
     birth_date = db.Column(db.TIMESTAMP)
 
-@app.route('/',methods={'Post','Get'})
+@app.route('/')
 def index():
     return render_template('index_form.html')
 
+@app.route('/submit',methods={'Post','Get'})
 def submit():
     groupId = request.values['groupid']
     data_UserData = usermessage.query.order_by(usermessage.birth_date.desc()).all()
