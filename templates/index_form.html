@@ -81,6 +81,15 @@
 		});
 	});
 </script>
+<script type="text/javascript">
+    function checkAll(obj, cName) {
+             var checkboxs = document.getElementsByName(cName);
+             $("input[name=" + cName + "]").prop("checked", true).trigger("click");
+             for (var i = 0; i < checkboxs.length; i++) {
+                 checkboxs[i].checked = obj.checked;
+             }
+     }
+</script> 
 </head>
 <body>
 
@@ -98,14 +107,19 @@
     <p><strong><form>金額：<input id="cost" type="number" name="欄位名稱" value=""></strong></p></form>
     <p><strong><form>代墊者：<input id="payer" type="text" name="欄位名稱"></strong></p></form>
     <p><strong>-------代墊者也是分帳者之一</strong></p>
-    <!--<input id="one-checkbox" type="checkbox" value="好學生"/>-->
 
-    <form>
+    <input type="checkbox" id="cAll" name="cAll" onclick="checkAll(this, 'c14')" />全選<br/> 
+    <input type="checkbox" id="{{ final_list.0 }}" name="c14" value="1" />{{ final_list.0 }}<br/> 
+    <input type="checkbox" id="{{ final_list.1 }}" name="c14" value="2" />{{ final_list.1 }}<br/> 
+    <input type="checkbox" id="{{ final_list.2 }}" name="c14" value="3" />{{ final_list.2 }}<br/> 
+    <input type="checkbox" id="{{ final_list.3 }}" name="c14" value="4" />{{ final_list.3 }}<br/>
+    
+    <!--<form>
         <p><strong>分帳者 1：<input id="splitter1" type="text" name="T1"></strong></p>  
         <span id="fieldSpace"></span> 
         <a href="javascript:" onclick="addField()">增加</a> 
         <a href="javascript:" onclick="delField()">刪除</a> 
-    </form>
+    </form>-->
     <br/>
 	<button id="sure">確認送出</button>
 </div>

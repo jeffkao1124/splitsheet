@@ -72,8 +72,6 @@ def submit():
         history_dic = {}
 
     a = history_list[0]['message']
-    
-    #selfgroupId = groupId
 
     return groupId
 
