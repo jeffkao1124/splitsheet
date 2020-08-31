@@ -72,7 +72,7 @@
 	}
 
 	$(document).ready(function () {
-        import liff from '@line/liff';
+    
 		liff.init(function (data) {  //初始化LIFF
             initializeApp(data);
             alert(groupid);
@@ -131,7 +131,7 @@
 <div>
     <h1>歡迎進入分帳</h1>
     <form method='post' action="{{url_for ('index')}}">
-        <p><input type="hidden" name="groupId" value="groupid"></p>
+        <p><input type="hidden" name="groupId" value=groupid></p>
         <p><button type="submit">點我</button></p>
     </form>
 </div>    
