@@ -109,10 +109,12 @@
     <p><strong>-------代墊者也是分帳者之一</strong></p>
 
     <input type="checkbox" id="cAll" name="cAll" onclick="checkAll(this, 'c14')" />全選<br/> 
-    <input type="checkbox" id="{{ final_list.0 }}" name="c14" value="1" />{{ final_list.0 }}<br/> 
-    <input type="checkbox" id="{{ final_list.1 }}" name="c14" value="2" />{{ final_list.1 }}<br/> 
+    {% for i in final_list %}
+    <input type="checkbox" id="{{ final_list }}" name="c14" value="1" />{{ final_list }}<br/> 
+    {% endfor %}
+    <!--<input type="checkbox" id="{{ final_list.1 }}" name="c14" value="2" />{{ final_list.1 }}<br/> 
     <input type="checkbox" id="{{ final_list.2 }}" name="c14" value="3" />{{ final_list.2 }}<br/> 
-    <input type="checkbox" id="{{ final_list.3 }}" name="c14" value="4" />{{ final_list.3 }}<br/>
+    <input type="checkbox" id="{{ final_list.3 }}" name="c14" value="4" />{{ final_list.3 }}<br/>-->
     
     <!--<form>
         <p><strong>分帳者 1：<input id="splitter1" type="text" name="T1"></strong></p>  
