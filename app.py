@@ -33,6 +33,7 @@ def index():
 
 @app.route('/submit',methods={'Post','Get'})
 def submit():
+    groupId =0
     groupId = request.values['groupid']
     data_UserData = usermessage.query.order_by(usermessage.birth_date.desc()).all()
     history_dic = {}
