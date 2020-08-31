@@ -50,7 +50,7 @@ def index():
 
         output_text=""
         for i in range(SetMsgNumber):
-            output_text=output_text+groupMember[i]+' '
+            output_text=output_text + new_list[i]+' '
         
         # history_dic = {}
         # history_list = []
