@@ -124,7 +124,7 @@
     <select name="number" id="number" onchange="print_value();">
         <option>請選擇代墊者</option>
         {% for list in new_list %}
-        <option id="{{ list }}">{{ list }}</option>
+        <option id="{{ list }}" value="{{ list }}">{{ list }}</option>
         {% endfor %}
     </select>
     <div id="result" type="text" name="欄位名稱"></div>
