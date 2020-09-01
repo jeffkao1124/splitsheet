@@ -60,7 +60,7 @@
         var msg = "分帳 ";  //回傳訊息字串
 		msg = msg + item + " ";
         msg = msg + cost + " ";
-        payer = $('#result').val();
+        payer = document.getElementById("number").value;
         msg = msg + payer + " ";
 
         /*var btn=document.getElementById("sure");
@@ -98,7 +98,8 @@
             initializeApp(data);
 		});
 		
-		$('#sure').click(function (e) {  //按下確定鈕
+        $('#sure').click(function (e) {  //按下確定鈕
+            
 			pushMsg($('#item').val(), $('#cost').val()); 
 		});
 	});
