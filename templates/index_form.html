@@ -99,7 +99,7 @@
     <p id="result" type="hidden" name="欄位名稱"></p>
     <p><strong>-------代墊者也是分帳者之一</strong></p>
 
-    <input type="checkbox" id="cAll" name="cAll" onclick="checkAll(this, 'c14')" />全選<br/> 
+    <input type="checkbox" id="cAll" name="cAll" onclick="checkAll(this, 'c14')" />全選<br/><br/>
     {% for list in new_list %}
     <input type="checkbox" id="{{ list }}" name="c14" value="{{ list }}" />{{ list }}<br/><br/>
     {% endfor %}
