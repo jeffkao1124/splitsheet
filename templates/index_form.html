@@ -7,29 +7,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
- <!--<script>  
-        var countMin = 1;  
-        var countMax = 10; 
-        var commonName = "T";
-        var commonsplit = "splitter";
-        var count = countMin;  
-        function addField() {  
-            if(count == countMax)  
-                alert("最多"+countMax+"個欄位");  
-            else      
-                document.getElementById("fieldSpace").innerHTML += "<p><strong>分帳者 " + (++count) + '：<input id="' + commonsplit + (count)+'" type="text" name="' + commonName + count + '"></strong></p>';
-               
-        } 
-        function delField() { 
-            if (count > countMin) { 
-                var fs = document.getElementById("fieldSpace");  
-                fs.removeChild(fs.lastChild); 
-                count--; 
-            } else { 
-                alert("無新增欄位可以刪除"); 
-            }    
-        } 
-</script>-->
 <script>
     function print_value() {
         <!-- 將 select 的值在印出 -->
@@ -75,11 +52,16 @@
         splitter =selected.join();
         };*/
 
-        msg = msg + splitter;
-        /*for(i=1 ; i<(count+1) ; i++){
-            splitperson = $('#splitter'+i).val()
-            msg = msg + splitperson +" ";
-        }*/
+        var obj=document.getElementsByName("c14");
+        var selected=[];
+        for (var i=0; i<obj.length; i++) {
+            if (obj[i].checked) {
+            msg = msg +obj[i].value +" ";
+
+          }
+        }
+
+        /*msg = msg + splitter;*/
         
 
 		liff.sendMessages([  //推播訊息
@@ -137,7 +119,7 @@
     {% endfor %}
     <input type="button" name="ok" id="sure" value="確認送出">
 
-  <script language="Javascript">
+  <!--<script language="Javascript">
     var btn=document.getElementById("sure");
     btn.onclick=function(){
       var obj=document.getElementsByName("c14");
@@ -152,11 +134,8 @@
       alert("分帳者有 : " + selected.join());
       
       };
-  </script>
-
+  </script>-->
     <br/>
-    <!--<input type="button" name="ok" id="sure" value="確認送出">
-	<button id="sure">確認送出</button>-->
 </div>
 </body>
 </html>
