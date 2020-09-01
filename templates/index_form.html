@@ -61,23 +61,23 @@
         msg = msg + cost + " ";
         msg = msg + result+ " ";
 
-        var btn=document.getElementById("ok");
+        var btn=document.getElementById("sure");
         btn.onclick=function(){
         var obj=document.getElementsByName("c14");
         var selected=[];
         for (var i=0; i<obj.length; i++) {
-        if (obj[i].checked) {
-          selected.push(obj[i].value);
-
+            if (obj[i].checked) {
+                selected.push(obj[i].value);
           }
         }
-        alert("分帳者有 : " + selected.join());
+        splitter =selected.join();
         };
 
-        for(i=1 ; i<(count+1) ; i++){
+        msg = msg + splitter
+        /*for(i=1 ; i<(count+1) ; i++){
             splitperson = $('#splitter'+i).val()
             msg = msg + splitperson +" ";
-        }
+        }*/
         
 
 		liff.sendMessages([  //推播訊息
@@ -133,9 +133,9 @@
     {% for list in new_list %}
     <input type="checkbox" id="{{ list }}" name="c14" value="{{ list }}" />{{ list }}<br/> 
     {% endfor %}
-    <input type="button" name="ok" id="ok" value="確定">
+    <!--<input type="button" name="ok" id="ok" value="確定">
 
-  <!--<script language="Javascript">
+  <script language="Javascript">
     var btn=document.getElementById("ok");
     btn.onclick=function(){
       var obj=document.getElementsByName("c14");
