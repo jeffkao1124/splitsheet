@@ -35,7 +35,22 @@
         <!-- 將 select 的值在印出 -->
         document.getElementById("result").innerHTML = document.getElementById("number").value
     }
-    </script>
+</script>
+<script language="Javascript">
+    var btn=document.getElementById("sure");
+    btn.onclick=function(){
+    var obj=document.getElementsByName("c14");
+    var selected=[];
+    for (var i=0; i<obj.length; i++) {
+        if (obj[i].checked) {
+            selected.push(obj[i].value);
+    
+            }
+            }
+    splitter =selected.join();
+    alert("分帳者有 : " + selected.join());
+          };
+</script>
 <script>
 	function initializeApp(data) {  //初始化LIFF
         var userid = data.context.userId;
@@ -61,7 +76,7 @@
         msg = msg + cost + " ";
         msg = msg + result+ " ";
 
-        var btn=document.getElementById("sure");
+        /*var btn=document.getElementById("sure");
         btn.onclick=function(){
         var obj=document.getElementsByName("c14");
         var selected=[];
@@ -71,7 +86,7 @@
           }
         }
         splitter =selected.join();
-        };
+        };*/
 
         msg = msg + splitter
         /*for(i=1 ; i<(count+1) ; i++){
@@ -151,7 +166,8 @@
   </script>-->
 
     <br/>
-	<button type="button" id="sure">確認送出</button>
+    <input type="button" name="ok" id="sure" value="確認送出">
+	<!--<button id="sure">確認送出</button>-->
 </div>
 </body>
 </html>
