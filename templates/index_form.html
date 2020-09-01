@@ -134,9 +134,10 @@
     <input type="checkbox" id="{{ list }}" name="c14" value="{{ list }}" />{{ list }}<br/> 
     {% endfor %}
     <input type="button" name="ok" id="ok" value="確定">
+    <input type="button" name="ok" id="sure" value="確認送出">
 
   <script language="Javascript">
-    var btn=document.getElementById("ok");
+    var btn=document.getElementById("sure");
     btn.onclick=function(){
       var obj=document.getElementsByName("c14");
       var selected=[];
@@ -153,8 +154,8 @@
   </script>
 
     <br/>
-    <input type="button" name="ok" id="sure" value="確認送出">
-	<!--<button id="sure">確認送出</button>-->
+    <!--<input type="button" name="ok" id="sure" value="確認送出">
+	<button id="sure">確認送出</button>-->
 </div>
 </body>
 </html>
