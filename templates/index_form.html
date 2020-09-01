@@ -36,21 +36,6 @@
         document.getElementById("result").innerHTML = document.getElementById("number").value
     }
 </script>
-<script language="Javascript">
-    var btn=document.getElementById("ok");
-    btn.onclick=function(){
-    var obj=document.getElementsByName("c14");
-    var selected=[];
-    for (var i=0; i<obj.length; i++) {
-        if (obj[i].checked) {
-            selected.push(obj[i].value);
-    
-            }
-            }
-    splitter =selected.join();
-    alert("分帳者有 : " + selected.join());
-          };
-</script>
 <script>
 	function initializeApp(data) {  //初始化LIFF
         var userid = data.context.userId;
@@ -150,7 +135,7 @@
     {% endfor %}
     <input type="button" name="ok" id="ok" value="確定">
 
-  <!--<script language="Javascript">
+  <script language="Javascript">
     var btn=document.getElementById("ok");
     btn.onclick=function(){
       var obj=document.getElementsByName("c14");
@@ -163,7 +148,7 @@
         }
       alert("分帳者有 : " + selected.join());
       };
-  </script>-->
+  </script>
 
     <br/>
     <input type="button" name="ok" id="sure" value="確認送出">
