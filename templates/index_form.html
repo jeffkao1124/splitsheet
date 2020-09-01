@@ -10,7 +10,7 @@
 <script>
     function print_value() {
         <!-- 將 select 的值在印出 -->
-        document.getElementById("result").innerHTML = document.getElementById("number").value
+        document.getElementById("result") = document.getElementById("number").value
     }
 </script>
 <script>
@@ -96,7 +96,6 @@
         <option id="{{ list }}" value="{{ list }}">{{ list }}</option>
         {% endfor %}
     </select>
-    <p>目前代墊者：</p>
     <p id="result" type="hidden" name="欄位名稱"></p>
     <p><strong>-------代墊者也是分帳者之一</strong></p>
 
