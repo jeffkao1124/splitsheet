@@ -43,23 +43,23 @@
         document.getElementById('post_groupID').value =groupid;
 
 	}
-	function pushMsg(item, cost, payer) {
+	function pushMsg(item, cost, result) {
 
-		if (item == '' || cost == '' || payer=='') {  //資料檢查
+		if (item == '' || cost == '' || result=='') {  //資料檢查
             alert('每個項目都必須輸入！');
             return;
         }
-        for(i=1 ; i<(count+1) ; i++){
+        /*for(i=1 ; i<(count+1) ; i++){
             if ($('#splitter'+i).val() =='') {
                 alert('每個項目都必須輸入！');
                 return;
         }
         
-        }
+        }*/
         var msg = "分帳 ";  //回傳訊息字串
 		msg = msg + item + " ";
         msg = msg + cost + " ";
-        msg = msg + payer+ " ";
+        msg = msg + result+ " ";
         for(i=1 ; i<(count+1) ; i++){
             splitperson = $('#splitter'+i).val()
             msg = msg + splitperson +" ";
@@ -83,7 +83,7 @@
 		});
 		
 		$('#sure').click(function (e) {  //按下確定鈕
-			pushMsg($('#item').val(), $('#cost').val(), $('#payer').val()); 
+			pushMsg($('#item').val(), $('#cost').val(), $('#result').val()); 
 		});
 	});
 </script>
@@ -110,26 +110,32 @@
         {% for list in new_list %}
         <option id="{{ list }}">{{ list }}</option>
         {% endfor %}
-
     </select>
+
     <div id="result"></div>
     <p><strong>-------代墊者也是分帳者之一</strong></p>
 
     <input type="checkbox" id="cAll" name="cAll" onclick="checkAll(this, 'c14')" />全選<br/> 
     {% for list in new_list %}
-    <input type="checkbox" id="{{ list }}" name="c14" value="1" />{{ list }}<br/> 
+    <input type="checkbox" id="{{ list }}" name="c14" value="{{ list }}" />{{ list }}<br/> 
     {% endfor %}
+    <input type="button" name="ok" id="ok" value="確定">
 
-    <!--<input type="checkbox" id="{{ final_list.1 }}" name="c14" value="2" />{{ final_list.1 }}<br/> 
-    <input type="checkbox" id="{{ final_list.2 }}" name="c14" value="3" />{{ final_list.2 }}<br/> 
-    <input type="checkbox" id="{{ final_list.3 }}" name="c14" value="4" />{{ final_list.3 }}<br/>-->
-    
-    <!--<form>
-        <p><strong>分帳者 1：<input id="splitter1" type="text" name="T1"></strong></p>  
-        <span id="fieldSpace"></span> 
-        <a href="javascript:" onclick="addField()">增加</a> 
-        <a href="javascript:" onclick="delField()">刪除</a> 
-    </form>-->
+  <script language="Javascript">
+    var btn=document.getElementById("ok");
+    btn.onclick=function(){
+      var obj=document.getElementsByName("c14");
+      var selected=[];
+      for (var i=0; i<obj.length; i++) {
+        if (obj[i].checked) {
+          selected.push(obj[i].value);
+          }
+        }
+      alert("分帳者有 : " + selected.join());
+      };
+  </script>
+
+
     <br/>
 	<button id="sure">確認送出</button>
 </div>
