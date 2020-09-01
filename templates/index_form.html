@@ -7,7 +7,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
- <script>  
+ <!--<script>  
         var countMin = 1;  
         var countMax = 10; 
         var commonName = "T";
@@ -29,7 +29,7 @@
                 alert("無新增欄位可以刪除"); 
             }    
         } 
-</script>
+</script>-->
 <script>
     function print_value() {
         <!-- 將 select 的值在印出 -->
@@ -43,9 +43,9 @@
         document.getElementById('post_groupID').value =groupid;
 
 	}
-	function pushMsg(item, cost, result) {
+	function pushMsg(item, cost) {
 
-		if (item == '' || cost == '' || result=='') {  //資料檢查
+		if (item == '' || cost == '') {  //資料檢查
             alert('每個項目都必須輸入！');
             return;
         }
@@ -97,7 +97,7 @@
 		});
 		
 		$('#sure').click(function (e) {  //按下確定鈕
-			pushMsg($('#item').val(), $('#cost').val(), $('#result').val()); 
+			pushMsg($('#item').val(), $('#cost').val()); 
 		});
 	});
 </script>
