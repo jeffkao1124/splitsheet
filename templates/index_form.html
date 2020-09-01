@@ -74,7 +74,7 @@
         splitter =selected.join();
         };*/
 
-        msg = msg + splitter
+        msg = msg + splitter;
         /*for(i=1 ; i<(count+1) ; i++){
             splitperson = $('#splitter'+i).val()
             msg = msg + splitperson +" ";
@@ -126,8 +126,7 @@
         <option id="{{ list }}">{{ list }}</option>
         {% endfor %}
     </select>
-
-    <div id="result"></div>
+    <div id="result" type="text" name="欄位名稱"></div>
     <p><strong>-------代墊者也是分帳者之一</strong></p>
 
     <input type="checkbox" id="cAll" name="cAll" onclick="checkAll(this, 'c14')" />全選<br/> 
