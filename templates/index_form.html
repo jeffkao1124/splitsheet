@@ -27,6 +27,7 @@
             alert($('#result').val());
             return;
         }
+        
         /*for(i=1 ; i<(count+1) ; i++){
             if ($('#splitter'+i).val() =='') {
                 alert('每個項目都必須輸入！');
@@ -38,6 +39,10 @@
 		msg = msg + item + " ";
         msg = msg + cost + " ";
         payer = document.getElementById("number").value;
+        if (payer == '&nbsp 請選擇'){
+            alert('請重新選擇代墊者！');
+            return;
+        }
         msg = msg + payer + " ";
 
         var obj=document.getElementsByName("c14");
