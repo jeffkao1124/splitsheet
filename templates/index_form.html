@@ -24,7 +24,6 @@
 
 		if (item == '' || cost == '') {  //資料檢查
             alert('每個項目都必須輸入！');
-            alert($('#result').val());
             return;
         }
         
@@ -39,7 +38,7 @@
 		msg = msg + item + " ";
         msg = msg + cost + " ";
         payer = document.getElementById("number").value;
-        if (payer == '&nbsp 請選擇'){
+        if (payer == '請選擇'){
             alert('請重新選擇代墊者！');
             return;
         }
