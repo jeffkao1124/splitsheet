@@ -31,41 +31,18 @@ class usermessage(db.Model):
 def index():
     if request.method == 'POST':
         groupId = request.values['groupId']
-        SetMsgNumber = usermessage.query.filter(usermessage.group_id==groupId).filter(usermessage.status=='set').count()
-        data_UserData = usermessage.query.filter(usermessage.group_id==groupId).filter(usermessage.status=='set')
+        # SetMsgNumber = usermessage.query.order_by(usermessage.birth_date).filter(usermessage.group_id==groupId).filter(usermessage.status=='set').count()
+        data_UserData = usermessage.query.order_by(usermessage.birth_date).filter(usermessage.group_id==groupId).filter(usermessage.status=='set')
         GroupPeopleString=''
         for _data in data_UserData:
             GroupPeopleString += _data.nickname +' '
         new_list = GroupPeopleString.strip('  ').split(' ')
         new_list=list(set(new_list)) #刪除重複
 
-        # output_text=""
-        # for i in range(SetMsgNumber):
-        #     output_text=output_text + final_list[i]+' '
-
-
         return render_template('index_form.html',**locals())
 
     return render_template('home.html',**locals())
 
-@app.route('/submit',methods={'Post','Get'})
-def submit():
-    groupId = 0
-    groupId = request.values['groupid']
-    data_UserData = usermessage.query.order_by(usermessage.birth_date.desc()).all()
-    history_dic = {}
-    history_list = []
-    for _data in data_UserData:
-        history_dic['user_id'] = _data.user_id
-        history_dic['group_id'] = _data.group_id
-        history_dic['message'] = _data.message
-        history_dic['account'] = _data.account
-        history_list.append(history_dic)
-        history_dic = {}
-
-    a = history_list[0]['message']
-
-    return groupId
 
 if __name__ =="__main__":
     app.run()
