@@ -26,16 +26,15 @@
             alert('每個項目都必須輸入！');
             return;
         }
+        var form = document.getElementById("form_name");
+        for(var i=0; i<form.category.length;i++){
+                if(form.category[i].checked){
+                    var category = form.category[i].value;
+                }
+            }
         
-        /*for(i=1 ; i<(count+1) ; i++){
-            if ($('#splitter'+i).val() =='') {
-                alert('每個項目都必須輸入！');
-                return;
-        }
-        
-        }*/
         var msg = "分帳 ";  //回傳訊息字串
-		msg = msg + item + " ";
+		msg = msg + category + item + " ";
         msg = msg + cost + " ";
         payer = document.getElementById("number").value;
         if (payer == '請選擇'){
@@ -93,6 +92,13 @@
     <br/>
     <p><strong><form>項目：<input id="item" type="text" name="項目" style="width:170px; height:30px; border:1px black double; background-color:#ffffff; border-radius:10px"></strong></p></form>
     <p><strong><form>金額：<input id="cost" type="number" name="金額"style="width:170px; height:30px; border:1px black double; background-color:#ffffff; border-radius:10px"></strong></p></form>
+    <br/>
+	<form name="form_name" id="form_name">
+        <label><input name="category" type="radio" value="TWD/" checked>台幣</label>
+        <label><input name="category" type="radio" value="JPY/">日圓</label>
+		<label><input name="category" type="radio" value="USD/">美元</label>
+        <label><input name="category" type="radio" value="EUR/">歐元</label>
+    <br/>
     <!--<p><strong><form>代墊者：<input id="payer" type="text" name="欄位名稱"></strong></p></form>-->
     <style>
         .text{
