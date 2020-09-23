@@ -34,9 +34,9 @@
             }
 
         var tag = document.getElementById("form_tag");
-        for(var i=0; i<form.tagName.length;i++){
-                if(form.tagName[i].checked){
-                    var tagName = form.tagName[i].value;
+        for(var i=0; i<tag.tagName.length;i++){
+                if(tag.tagName[i].checked){
+                    var tagName =tag.tagName[i].value;
                 }
             }
         
@@ -96,7 +96,7 @@
     body{
       background-color: #FFEEDD;
 
-      font-size:20px;
+      /* font-size:20px; */
 
     }
     ul {
@@ -177,10 +177,10 @@
 
     <form name="form_tag" id="form_tag">
         <label><input name="tagName" type="radio" value="" checked>不分類</label>
-        <label><input name="tagName" type="radio" value="#餐飲/">餐飲</label>
-		<label><input name="tagName" type="radio" value="#住宿/">住宿</label>
-        <label><input name="tagName" type="radio" value="#交通/">交通</label>
-        <label><input name="tagName" type="radio" value="#行程/">行程</label>
+        <label><input name="tagName" type="radio" value="#餐飲">餐飲</label>
+		<label><input name="tagName" type="radio" value="#住宿">住宿</label>
+        <label><input name="tagName" type="radio" value="#交通">交通</label>
+        <label><input name="tagName" type="radio" value="#行程">行程</label>
     <br/>
 
     <p><strong><form>項目：<input id="item" type="text" name="項目" ></strong></p></form>
