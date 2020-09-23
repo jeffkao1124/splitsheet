@@ -91,7 +91,19 @@
                  checkboxs[i].checked = obj.checked;
              }
      }
-</script> 
+</script>
+ <script type="text/javascript">
+function divShow(){
+document.getElementById("btnshow").style.display="block";
+document.getElementById("btnhref").innerHTML ="隱藏分類";
+document.getElementById("btnhref").href ="javascript:divhidden()";
+}
+function divhidden(){
+document.getElementById("btnshow").style.display="none";
+document.getElementById("btnhref").innerHTML ="分類";
+document.getElementById("btnhref").href ="javascript:divShow()"; 
+}
+</script>
 <style>
     body{
       background-color: #FFEEDD;
@@ -173,8 +185,8 @@
         <li><img src="https://imgur.com/JV8bflw.png" width=100px height=auto align=center></img></li>
         <li><h1 style="line-height:100px;"><strong>記錄分帳</strong></h1></li>
       </ul>
-
-    <div>標籤
+<a href="javascript:divShow();" id="btnhref" class="btn-slide">分類</a>
+    <div style="display: none;" id="btnshow">
     <br/>
     <form name="form_tag" id="form_tag">
         <label><input name="tagName" type="radio" value="" checked>不分類</label>
