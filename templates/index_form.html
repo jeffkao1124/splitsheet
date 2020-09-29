@@ -128,6 +128,54 @@ document.getElementById("btnhref").href ="javascript:divShow()";
     border-color:#FFFFFF;
     border-radius: 12px;
 }
+.button2 {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0px 17px;
+    border: 1px solid #a88d8d;
+    border-radius: 7px;
+    background: #b2eaff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#b2eaff), to(#94afff));
+    background: -moz-linear-gradient(top, #b2eaff, #94afff);
+    background: linear-gradient(to bottom, #b2eaff, #94afff);
+    -webkit-box-shadow: #fff1f1 0px 0px 46px 0px;
+    -moz-box-shadow: #fff1f1 0px 0px 46px 0px;
+    box-shadow: #fff1f1 0px 0px 46px 0px;
+    text-shadow: #ffffff 1px 1px 1px;
+    font: normal normal bold 20px arial;
+    color: #001891;
+    text-decoration: none;
+}
+.button2:hover,
+.button2:focus {
+    border: 1px solid #f0c9c9;
+    background: #d6ffff;
+    background: -webkit-gradient(linear, left top, left bottom, from(#d6ffff), to(#b2d2ff));
+    background: -moz-linear-gradient(top, #d6ffff, #b2d2ff);
+    background: linear-gradient(to bottom, #d6ffff, #b2d2ff);
+    color: #001891;
+    text-decoration: none;
+}
+.button2:active {
+    background: #6b8c99;
+    background: -webkit-gradient(linear, left top, left bottom, from(#6b8c99), to(#94afff));
+    background: -moz-linear-gradient(top, #6b8c99, #94afff);
+    background: linear-gradient(to bottom, #6b8c99, #94afff);
+}
+.button2:before{
+    content:  "\0000a0";
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    line-height: 20px;
+    margin: 0 4px -6px -4px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUAgMAAADw5/WeAAAADFBMVEVUpN47cpuIv+j////WN4xEAAAACXBIWXMAAA7EAAAOxAGVKw4bAAAAMklEQVQImWN4tWrVqtUMDQwMDIzEkfb//wBJ09BYIGnCwAsW+QskWUNDiTPhamhoaDgATK0VHVjI0UwAAAAASUVORK5CYII=") no-repeat left center transparent;
+    background-size: 100% 100%;
+}
 .button3 {
     display: inline-block;
     text-align: center;
@@ -179,10 +227,9 @@ document.getElementById("btnhref").href ="javascript:divShow()";
     </style>
 </head>
 <body style="color:#634b34">
-
 <div align="center">
     <br><img src="{{url_for('static', filename='images/logo.png')}}" width="200px"align="center"><h6><p><strong style="color:#634b34">ACCOUNT ON ME , COUNT ON ME</strong></p><br>
-<img src="https://imgur.com/ObdhpSv.gif">
+
 <a href="javascript:divShow();" id="btnhref" class="btn-slide" align:"left">分類</a><br>
     <div style="display: none;" id="btnshow">
     <br/>
@@ -217,7 +264,8 @@ document.getElementById("btnhref").href ="javascript:divShow()";
         border-radius:10px
         }
     </style>
-    <div style="margin-bottom:10px; "><strong>代墊者：</strong>
+    <div style="margin-bottom:10px; "><strong>代墊者：</strong><br>
+<a class="button2" type="button2">抽代墊者</a><br></br>
     <span class="text">
     <select name="number" id="number" onchange="print_value();" class="text-select">
         <option value='請選擇'>&nbsp 請選擇</option>
@@ -237,6 +285,8 @@ document.getElementById("btnhref").href ="javascript:divShow()";
 
     <a class="button3" type="button" name="ok" id="sure" value="確認送出">確認</a><br></br>
 </div>
+<br><br><br><br>
+<img src="https://imgur.com/ObdhpSv.gif">
 </body>
 </html>
 
