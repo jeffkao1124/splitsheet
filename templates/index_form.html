@@ -26,7 +26,7 @@
             alert('每個項目都必須輸入！');
             return;
         }
-        if(item.match(RegExp(/ /))){
+        if(RegExp(/ /).exec(item)){
             alert("項目裡不能有空格！");
             return;
         }
