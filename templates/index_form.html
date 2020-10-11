@@ -40,22 +40,22 @@
                 }
             }
         
-        var msg = "@分帳 ";  //回傳訊息字串
+        var msg = "@分帳$";  //回傳訊息字串
 		msg = msg + category + item ;
-        msg = msg + tagName + " ";
-        msg = msg + cost + " ";
+        msg = msg + tagName + "$";
+        msg = msg + cost + "$";
         payer = document.getElementById("number").value;
         if (payer == '請選擇'){
             alert('請重新選擇代墊者！');
             return;
         }
-        msg = msg + payer + " ";
+        msg = msg + payer + "%";
 
         var obj=document.getElementsByName("c14");
         var selected=[];
         for (var i=0; i<obj.length; i++) {
             if (obj[i].checked) {
-            msg = msg +obj[i].value +" ";
+            msg = msg +obj[i].value +"%";
 
           }
         }
