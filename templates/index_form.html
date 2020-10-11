@@ -28,8 +28,7 @@
         }
         if(RegExp(/ /).exec(item)){
             var re = / /gi;
-            var newitem = item.replace(re, '_');
-            var item=newitem;
+            item = item.replace(re, '_');
             return;
         }
         var form = document.getElementById("form_name");
