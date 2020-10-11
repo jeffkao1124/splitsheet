@@ -27,7 +27,9 @@
             return;
         }
         if(RegExp(/ /).exec(item)){
-            alert("項目裡不能有空格！");
+            var re = / /gi;
+            var newitem = item.replace(re, '_');
+            item=newitem
             return;
         }
         var form = document.getElementById("form_name");
