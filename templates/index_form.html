@@ -26,7 +26,7 @@
             alert('每個項目都必須輸入！');
             return;
         }
-        if (console.log(item.search(" ") != -1 ){
+        if(item.match(RegExp(/ /))){
             alert("項目裡不能有空格！");
             return;
         }
