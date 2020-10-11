@@ -26,10 +26,14 @@
             alert('每個項目都必須輸入！');
             return;
         }
-        if (" " in item){
-            alert("項目裡不能有空格！");
+
+        if (item).indexOf(" ") == -1) {
+            continue;
+        } else {
+            alert("項目中不能有空格！");
             return;
         }
+
         var form = document.getElementById("form_name");
         for(var i=0; i<form.category.length;i++){
                 if(form.category[i].checked){
