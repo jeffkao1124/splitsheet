@@ -29,7 +29,7 @@
         if(RegExp(/ /).exec(item)){
             var re = / /gi;
             var newitem = item.replace(re, '_');
-            item=newitem
+            var item=newitem
             return;
         }
         var form = document.getElementById("form_name");
