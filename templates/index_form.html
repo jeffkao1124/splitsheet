@@ -27,7 +27,7 @@
             return;
         }
         if(RegExp(/ /).exec(item)){
-            item=item.replace('A', '_');
+            item=item.replace('/ /g', '_');
             return;
         }
         var form = document.getElementById("form_name");
