@@ -26,10 +26,7 @@
             alert('每個項目都必須輸入！');
             return;
         }
-        if(RegExp(/ /).exec(item)){
-            item=item.replace(/ /g, '_');
-            return;
-        }
+        item.replace(/ /g, '_');
         var form = document.getElementById("form_name");
         for(var i=0; i<form.category.length;i++){
                 if(form.category[i].checked){
