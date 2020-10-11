@@ -40,10 +40,10 @@
                 }
             }
         
-        var msg = "@分帳$";  //回傳訊息字串
+        var msg = "@分帳%";  //回傳訊息字串
 		msg = msg + category + item ;
-        msg = msg + tagName + "$";
-        msg = msg + cost + "$";
+        msg = msg + tagName + "%";
+        msg = msg + cost + "%";
         payer = document.getElementById("number").value;
         if (payer == '請選擇'){
             alert('請重新選擇代墊者！');
