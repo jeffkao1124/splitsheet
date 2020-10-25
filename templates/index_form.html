@@ -90,16 +90,17 @@
         }
         var money="";
         var lis = document.getElementsByClassName('lis');
+        var laa = document.getElementsById('people');
         var lisLen = lis.length;
         for(var j = 0; j< lisLen ; j++){
 	        lis[j].index = j;
-            money=money+lis[j].value;
+            money=money+" "+laa[j].value+" "+lis[j].value;
 
 	    // lis[i].onclick = function(){
 		//     console.log(this.index);//元素索引值
 	    // }
     }
-        alert(money);
+        
         var msg2 = "@分帳 "+item2+" "+payer2+" "+money;  //回傳訊息字串
 
         // var obj=document.getElementsByName("c13");
@@ -339,6 +340,7 @@ document.getElementById("btnhref").href ="javascript:divShow()";
     <div style="margin-left:1px; "><p><strong>輸入每人的花費(未花費者可留空)：</strong></p></div>
     <div style="margin-left:1px" class="list">
     {% for list in new_list %}
+    <p id="people" value="{{ list }} "></p>
     <form>{{ list }}花了<input class="lis" id="cost2" type="number" value="{{ list }}" name="金額"> 元</form><br/><br/>
     {% endfor %}
     </div>
