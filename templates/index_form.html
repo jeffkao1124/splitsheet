@@ -94,13 +94,15 @@
         var obj=document.getElementsByName("c13");
         var lisLen = lis.length;
         var selected=[];
+        var sum=0;
         for(var j = 0; j< lisLen ; j++){
 	        lis[j].index = j;
             if(obj[j].checked){
+            sum+=lis[j].value;
             money=money+" "+obj[j].value+" "+lis[j].value;
             }
     }
-        var msg2 = "@分帳 "+item2+" "+payer2+money;  //回傳訊息字串
+        var msg2 = "@分帳 "+item2+" "+sum+" "+payer2+money;  //回傳訊息字串
 
         // var obj=document.getElementsByName("c13");
         // var selected=[];
