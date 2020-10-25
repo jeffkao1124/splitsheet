@@ -31,9 +31,9 @@
             return;
         }
         var form = document.getElementById("form_name");             //幣別
-        for(var i=0; i<form.select.category.length;i++){
-                if(form.select.category[i].checked){
-                    var category = form.select.category[i].value;
+        for(var i=0; i<form.category.length;i++){
+                if(form.category[i].checked){
+                    var category = form.category[i].value;
                 }
             }
 
@@ -199,12 +199,10 @@ document.getElementById("btnhref").href ="javascript:divShow()";
     <p><strong><form>項目：<input id="item" type="text" name="項目" ></strong></p></form>
     <p><strong><form>金額：<input id="cost" type="number" name="金額"></strong></p></form>
 	<form name="form_name" id="form_name">
-        <select>
-        <option name="category" value="" checked>新台幣</option>
-        <option name="category" value="JPY/">日圓</option>
-        <option name="category" value="USD/">美元</option>
-        <option name="category" value="EUR/">歐元</option>
-    </select>
+        <label><input name="category" type="radio" value="" checked>台幣</label>
+        <label><input name="category" type="radio" value="JPY/">日圓</label>
+		<label><input name="category" type="radio" value="USD/">美元</label>
+        <label><input name="category" type="radio" value="EUR/">歐元</label>
     <br/><br/></form>
     <!--<p><strong><form>代墊者：<input id="payer" type="text" name="欄位名稱"></strong></p></form>-->
     <style>
