@@ -90,11 +90,13 @@
         }
         var money="";
         var lis = document.getElementsByClassName('lis');
-        var laa = document.getElementsById('people').innerHTML;
+        // var laa = document.getElementsById('people').innerHTML;
+        var obj=document.getElementsByName("c13");
         var lisLen = lis.length;
+        var selected=[];
         for(var j = 0; j< lisLen ; j++){
 	        lis[j].index = j;
-            money=money+" "+laa[j]+" "+lis[j].value;
+            money=money+" "+obj[j].value+" "+lis[j].value;
 
 	    // lis[i].onclick = function(){
 		//     console.log(this.index);//元素索引值
@@ -340,7 +342,8 @@ document.getElementById("btnhref").href ="javascript:divShow()";
     <div style="margin-left:1px; "><p><strong>輸入每人的花費(未花費者可留空)：</strong></p></div>
     <div style="margin-left:1px" class="list">
     {% for list in new_list %}
-    <p id="people" value="{{ list }}">{{ list }}</p>
+    <input type="checkbox" id ="{{ list }}" name="c13" value="{{ list }}" />{{ list }}<br/><br/>
+    <!-- <p id="people" value="{{ list }}">{{ list }}</p> -->
     <form>花了<input class="lis" id="cost2" type="number" value="{{ list }}" name="金額"> 元</form><br/><br/>
     {% endfor %}
     </div>
