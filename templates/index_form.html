@@ -167,13 +167,13 @@ document.getElementById("btnhref").href ="javascript:divShow()";
     function div_mode1(){
     document.getElementById("differentshow").style.display="block";
     document.getElementById("originalshow").style.display="none";
-    document.getElementById("differenthref").innerHTML ="一般分帳模式";
+    document.getElementById("differenthref").innerHTML ="切換成一般分帳模式";
     document.getElementById("differenthref").href ="javascript:div_mode2()";
     }
     function div_mode2(){
     document.getElementById("differentshow").style.display="none";
     document.getElementById("originalshow").style.display="block";
-    document.getElementById("differenthref").innerHTML ="多人不同金額分帳模式";
+    document.getElementById("differenthref").innerHTML ="切換成多人不同金額分帳模式";
     document.getElementById("differenthref").href ="javascript:div_mode1()"; 
     }
     </script>
@@ -290,7 +290,7 @@ document.getElementById("btnhref").href ="javascript:divShow()";
     <div align='center'>
     <br><img src="{{url_for('static', filename='images/logo.png')}}" width="200px"><h6><p align="center"><strong style="color:#634b34">ACCOUNT ON ME , COUNT ON ME</strong></p><br>
 
-<a align="center" href="javascript:div_mode2();" id="differenthref" class="button2">多人不同金額分帳模式</a>
+<a align="center" href="javascript:div_mode2();" id="differenthref" class="button2">切換成多人不同金額分帳模式</a>
 <br>
 <div align="center" id="originalshow" style="display: block;">
     <a href="javascript:divShow();" id="btnhref" class="btn-slide" align:"left">分類</a><br>
