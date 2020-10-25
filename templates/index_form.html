@@ -312,7 +312,7 @@ document.getElementById("btnhref").href ="javascript:divShow()";
         width:100%;
         }
         .text select{
-        width:150px; 
+        width:180px; 
         height:30px;
         line-height: 55px;
         font-size:18px;
@@ -323,18 +323,18 @@ document.getElementById("btnhref").href ="javascript:divShow()";
 <div style="margin-bottom:10px; "><strong>代墊者：</strong>
     <span class="text">
     <select name="number2" id="number2" onchange="print_value();" class="text-select">
-        <option value='請選擇'>&nbsp 請選擇</option>
+        <option value='請選擇'>&nbsp    請選擇    </option>
         {% for list in new_list %}
         <option id="{{ list }}" value="{{ list }}">{{ list }}</option>
         {% endfor %}
     </select>
 </span> </div>
-    <div style="margin:10px; "><p><strong> 請輸入每個人的花費：</strong></p></div>
+    <div style="margin-left:1px; "><p><strong>輸入每人的花費(未花費者可留空)：</strong></p></div>
     <div style="margin-left:1px">
     <!-- <input type="checkbox" id="cAll" name="cAll" onclick="checkAll(this, 'c13')" />全選<br/><br/> -->
     {% for list in new_list %}
     <!-- <input type="checkbox" id ="{{ list }}" name="c13" value="{{ list }}" />{{ list }} -->
-    <form>{{ list }}-->金額：<input id="cost2" type="number" name="金額"></form><br/><br/>
+    <form>{{ list }}花了<input id="cost2" type="number" value="{{ list }}" name="金額"> 元</form><br/><br/>
     <!-- <p><strong><form>金額：<input id="cost2" type="number" name="金額"></form></strong></p> -->
     {% endfor %}
     </div>
