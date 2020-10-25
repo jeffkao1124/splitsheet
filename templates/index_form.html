@@ -167,13 +167,13 @@ document.getElementById("btnhref").href ="javascript:divShow()";
     function div_mode1(){
     document.getElementById("differentshow").style.display="block";
     document.getElementById("originalshow").style.display="none";
-    document.getElementById("differenthref").innerHTML ="一般分帳模式";
+    document.getElementById("differenthref").innerHTML ="切換成一般分帳模式";
     document.getElementById("differenthref").href ="javascript:div_mode2()";
     }
     function div_mode2(){
     document.getElementById("differentshow").style.display="none";
     document.getElementById("originalshow").style.display="block";
-    document.getElementById("differenthref").innerHTML ="多人不同金額分帳模式";
+    document.getElementById("differenthref").innerHTML ="切換成多人不同金額分帳模式";
     document.getElementById("differenthref").href ="javascript:div_mode1()"; 
     }
     </script>
@@ -200,6 +200,41 @@ document.getElementById("btnhref").href ="javascript:divShow()";
     background-color: #fff4f4;
     border-color:#FFFFFF;
     border-radius: 8px;
+}
+.button2 {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0px 17px;
+    border: 1px solid #a89f8d;
+    border-radius: 7px;
+    background: #998e6b;
+    background: -webkit-gradient(linear, left top, left bottom, from(#998e6b), to(#ffc894));
+    background: -moz-linear-gradient(top, #99876b, #fff494);
+    background: linear-gradient(to bottom, #ffeb94, #ffeb94);
+    -webkit-box-shadow: #fff1f1 0px 0px 46px 0px;
+    -moz-box-shadow: #fff1f1 0px 0px 46px 0px;
+    box-shadow: #fff1f1 0px 0px 46px 0px;
+    text-shadow: #ffffff 1px 1px 1px;
+    font: normal normal bold 20px arial;
+    color: #614e11;
+    text-decoration: none;
+}
+.button2:hover,
+.button2:focus {
+    border: 1px solid #f0c9c9;
+    background: #ecffd6;
+    background: -webkit-gradient(linear, left top, left bottom, from(#998e6b), to(#ffc894));
+    background: -moz-linear-gradient(top, #99876b, #fff494);
+    background: linear-gradient(to bottom, #ffeb94, #ffeb94);
+    color: #614111;
+    text-decoration: none;
+}
+.button2:active {
+    background: #998e6b;
+    background: -webkit-gradient(linear, left top, left bottom, from(#998e6b), to(#ffc894));
+    background: -moz-linear-gradient(top, #99876b, #fff494);
+    background: linear-gradient(to bottom, #ffeb94, #ffeb94);
 }
 .button3 {
     display: inline-block;
@@ -255,7 +290,7 @@ document.getElementById("btnhref").href ="javascript:divShow()";
     <div align='center'>
     <br><img src="{{url_for('static', filename='images/logo.png')}}" width="200px"><h6><p align="center"><strong style="color:#634b34">ACCOUNT ON ME , COUNT ON ME</strong></p><br>
 
-<a align="center" href="javascript:div_mode2();" id="differenthref">多人不同金額分帳模式</a>
+<a align="center" href="javascript:div_mode2();" id="differenthref" class="button2">切換成多人不同金額分帳模式</a>
 <br>
 <div align="center" id="originalshow" style="display: block;">
     <a href="javascript:divShow();" id="btnhref" class="btn-slide" align:"left">分類</a><br>
@@ -314,7 +349,6 @@ document.getElementById("btnhref").href ="javascript:divShow()";
 </div>
 
 <div align="center" id="differentshow" style="display: none;">
-<h>測試頁面</h>
 <p><strong><form>項目：<input id="item2" type="text" name="項目" ></strong></p></form>
     <style>
         .text{
@@ -341,7 +375,7 @@ document.getElementById("btnhref").href ="javascript:divShow()";
     <div style="margin-left:1px; "><p><strong>輸入每人的花費(未花費者可留空)：</strong></p></div>
     <div style="margin-left:1px" class="list">
     {% for list in new_list %}
-    <input type="checkbox" id ="{{ list }}" name="c13" value="{{ list }}" />{{ list }}<br/><br/>
+    <input width="25px" type="checkbox" id ="{{ list }}" name="c13" value="{{ list }}" />{{ list }}<br/><br/>
     <!-- <p id="people" value="{{ list }}">{{ list }}</p> -->
     <form>花了<input class="lis" id="cost2" type="number" value="{{ list }}" name="金額"> 元</form><br/><br/>
     {% endfor %}
