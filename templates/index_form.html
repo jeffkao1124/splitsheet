@@ -88,7 +88,16 @@
             alert('請重新選擇代墊者！');
             return;
         }
-        var msg2 = "@分帳 "+item2+" "+payer2;  //回傳訊息字串
+        var msg2 = "@分帳 "+item2+" "+payer2+" ";  //回傳訊息字串
+
+        var obj=document.getElementsByName("c13");
+        var selected=[];
+        for (var i=0; i<obj.length; i++) {
+            if (obj[i].checked) {
+            msg = msg +obj[i].value +" ";
+
+          }
+        }
 
         		liff.sendMessages([  //推播訊息
 			{ type: 'text',
@@ -317,9 +326,9 @@ document.getElementById("btnhref").href ="javascript:divShow()";
 </span> </div>
     <div style="margin:10px; "><p><strong> 以下請勾選分帳者：</strong></p></div>
     <div style="margin-left:1px">
-    <input type="checkbox" id="cAll" name="cAll" onclick="checkAll(this, 'c14')" />全選<br/><br/>
+    <input type="checkbox" id="cAll" name="cAll" onclick="checkAll(this, 'c13')" />全選<br/><br/>
     {% for list in new_list %}
-    <input type="checkbox" id ="{{ list }}" name="c14" value="{{ list }}" />{{ list }}<br/><br/>
+    <input type="checkbox" id ="{{ list }}" name="c13" value="{{ list }}" />{{ list }}<br/><br/>
     <p><strong><form>金額：<input id="cost2" type="number" name="金額"></form></strong></p>
     {% endfor %}
     </div>
