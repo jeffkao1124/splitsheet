@@ -100,7 +100,7 @@
 		//     console.log(this.index);//元素索引值
 	    // }
     }
-        
+        alert(money);
         var msg2 = "@分帳 "+item2+" "+payer2+" "+money;  //回傳訊息字串
 
         // var obj=document.getElementsByName("c13");
@@ -340,8 +340,8 @@ document.getElementById("btnhref").href ="javascript:divShow()";
     <div style="margin-left:1px; "><p><strong>輸入每人的花費(未花費者可留空)：</strong></p></div>
     <div style="margin-left:1px" class="list">
     {% for list in new_list %}
-    <p id="people" value="{{ list }} "></p>
-    <form>{{ list }}花了<input class="lis" id="cost2" type="number" value="{{ list }}" name="金額"> 元</form><br/><br/>
+    <p id="people" value="{{ list }}">{{ list }}</p>
+    <form>花了<input class="lis" id="cost2" type="number" value="{{ list }}" name="金額"> 元</form><br/><br/>
     {% endfor %}
     </div>
 <a class="button3" type="button" name="ok" id="sure2" value="確認送出">確認</a><br></br>
