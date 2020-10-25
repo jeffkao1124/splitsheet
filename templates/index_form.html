@@ -30,14 +30,12 @@
             alert("項目裡不能有空格！");
             return;
         }
-
-        var ops=document.getElementById("myselect");
-        
-        for(var i=0; i<ops.category.length;i++){
-            if(ops.category[i].selected){
-                var category = ops.category[i].value;
+        var form = document.getElementById("form_name");             //幣別
+        for(var i=0; i<form.category.length;i++){
+                if(form.category[i].checked){
+                    var category = form.category[i].value;
+                }
             }
-        }
 
         var tag = document.getElementById("form_tag");
         
@@ -200,13 +198,12 @@ document.getElementById("btnhref").href ="javascript:divShow()";
 <br/>
     <p><strong><form>項目：<input id="item" type="text" name="項目" ></strong></p></form>
     <p><strong><form>金額：<input id="cost" type="number" name="金額"></strong></p></form>
-    <select name ="myselect">
-        <option name="category" value="" selected>新台幣</option>
-        <option name="category" value="JPY/">日幣</option>
-        <option name="category" value="USD/">美元</option>
-        <option name="category" value="EUR/">歐元</option>
-    </select>
-    <br/><br/>
+	<form name="form_name" id="form_name">
+        <label><input name="category" type="radio" value="" checked>台幣</label>
+        <label><input name="category" type="radio" value="JPY/">日圓</label>
+		<label><input name="category" type="radio" value="USD/">美元</label>
+        <label><input name="category" type="radio" value="EUR/">歐元</label>
+    <br/><br/></form>
     <!--<p><strong><form>代墊者：<input id="payer" type="text" name="欄位名稱"></strong></p></form>-->
     <style>
         .text{
