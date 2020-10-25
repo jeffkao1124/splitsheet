@@ -96,14 +96,11 @@
         var selected=[];
         for(var j = 0; j< lisLen ; j++){
 	        lis[j].index = j;
+            if(obj[i].checked){
             money=money+" "+obj[j].value+" "+lis[j].value;
-
-	    // lis[i].onclick = function(){
-		//     console.log(this.index);//元素索引值
-	    // }
+            }
     }
-        alert(money);
-        var msg2 = "@分帳 "+item2+" "+payer2+" "+money;  //回傳訊息字串
+        var msg2 = "@分帳 "+item2+" "+payer2+money;  //回傳訊息字串
 
         // var obj=document.getElementsByName("c13");
         // var selected=[];
