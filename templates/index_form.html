@@ -88,7 +88,12 @@
             alert('請重新選擇代墊者！');
             return;
         }
-        var msg2 = "@分帳 "+item2+" "+payer2+" ";  //回傳訊息字串
+        var account=document.getElementsById("cost2");
+        var money=0;
+        for(var j=0; j<account.length;j++){
+            money = money+account[j].value;
+        }
+        var msg2 = "@分帳 "+item2+" "+payer2+" "+money+" ";  //回傳訊息字串
 
         var obj=document.getElementsByName("c13");
         var selected=[];
