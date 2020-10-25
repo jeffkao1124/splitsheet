@@ -32,8 +32,11 @@
         }
 
         var ops=document.getElementById("myselect").options;
-        for(i=0;i<ops.length;i++){
-            var category = ops[i].value;
+        
+        for(var i=0; i<ops.category[i].length;i++){
+            if(ops.category[i].selected){
+                var category = ops.category[i].value;
+            }
         }
 
         var tag = document.getElementById("form_tag");
