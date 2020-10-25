@@ -201,6 +201,52 @@ document.getElementById("btnhref").href ="javascript:divShow()";
     border-color:#FFFFFF;
     border-radius: 8px;
 }
+.button2 {
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0px 17px;
+    border: 1px solid #a89f8d;
+    border-radius: 7px;
+    background: #998e6b;
+    background: -webkit-gradient(linear, left top, left bottom, from(#998e6b), to(#ffc894));
+    background: -moz-linear-gradient(top, #99876b, #fff494);
+    background: linear-gradient(to bottom, #ffeb94, #ffeb94);
+    -webkit-box-shadow: #fff1f1 0px 0px 46px 0px;
+    -moz-box-shadow: #fff1f1 0px 0px 46px 0px;
+    box-shadow: #fff1f1 0px 0px 46px 0px;
+    text-shadow: #ffffff 1px 1px 1px;
+    font: normal normal bold 20px arial;
+    color: #614e11;
+    text-decoration: none;
+}
+.button2:hover,
+.button2:focus {
+    border: 1px solid #f0c9c9;
+    background: #ecffd6;
+    background: -webkit-gradient(linear, left top, left bottom, from(#998e6b), to(#ffc894));
+    background: -moz-linear-gradient(top, #99876b, #fff494);
+    background: linear-gradient(to bottom, #ffeb94, #ffeb94);
+    color: #614111;
+    text-decoration: none;
+}
+.button2:active {
+    background: #998e6b;
+    background: -webkit-gradient(linear, left top, left bottom, from(#998e6b), to(#ffc894));
+    background: -moz-linear-gradient(top, #99876b, #fff494);
+    background: linear-gradient(to bottom, #ffeb94, #ffeb94);
+}
+.button2:before{
+    content:  "\0000a0";
+    display: inline-block;
+    height: 24px;
+    width: 24px;
+    line-height: 24px;
+    margin: 0 4px -6px -4px;
+    position: relative;
+    top: 0px;
+    left: 0px;
+}
 .button3 {
     display: inline-block;
     text-align: center;
@@ -340,7 +386,7 @@ document.getElementById("btnhref").href ="javascript:divShow()";
     <div style="margin-left:1px; "><p><strong>輸入每人的花費(未花費者可留空)：</strong></p></div>
     <div style="margin-left:1px" class="list">
     {% for list in new_list %}
-    <input type="checkbox" id ="{{ list }}" name="c13" value="{{ list }}" />{{ list }}<br/><br/>
+    <input width="50px" type="checkbox" id ="{{ list }}" name="c13" value="{{ list }}" />{{ list }}<br/><br/>
     <!-- <p id="people" value="{{ list }}">{{ list }}</p> -->
     <form>花了<input class="lis" id="cost2" type="number" value="{{ list }}" name="金額"> 元</form><br/><br/>
     {% endfor %}
