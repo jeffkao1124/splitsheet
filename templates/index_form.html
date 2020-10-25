@@ -30,7 +30,7 @@
             alert("項目裡不能有空格！");
             return;
         }
-        var form = document.getElementById("form_name");
+        var form = document.getElementById("form_name");             //幣別
         for(var i=0; i<form.category.length;i++){
                 if(form.category[i].checked){
                     var category = form.category[i].value;
@@ -38,16 +38,14 @@
             }
 
         var tag = document.getElementById("form_tag");
-        for(var i=0; i<tag.tagName.length;i++){
+        
+        for(var i=0; i<tag.tagName.length;i++){                                   //分類
                 if(tag.tagName[i].checked){
                     var tagName =tag.tagName[i].value;
                 }
             }
         
-        var msg = "@分帳 ";  //回傳訊息字串
-		msg = msg + category + item ;
-        msg = msg + tagName + " ";
-        msg = msg + cost + " ";
+        var msg = "@分帳 "+category+item+tagName+" "+cost+" ";  //回傳訊息字串
         payer = document.getElementById("number").value;
         if (payer == '請選擇'){
             alert('請重新選擇代墊者！');
