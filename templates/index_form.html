@@ -90,11 +90,11 @@
         }
         var money="";
         var lis = document.getElementsByClassName('lis');
-        var laa = document.getElementsById('people');
+        var laa = document.getElementsById('people').innerHTML;
         var lisLen = lis.length;
         for(var j = 0; j< lisLen ; j++){
 	        lis[j].index = j;
-            money=money+" "+laa[j].innerHTML+" "+lis[j].value;
+            money=money+" "+laa[j].text+" "+lis[j].value;
 
 	    // lis[i].onclick = function(){
 		//     console.log(this.index);//元素索引值
