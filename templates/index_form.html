@@ -331,9 +331,10 @@ document.getElementById("btnhref").href ="javascript:divShow()";
 </span> </div>
     <div style="margin:10px; "><p><strong> 以下請勾選分帳者：</strong></p></div>
     <div style="margin-left:1px">
-    <input type="checkbox" id="cAll" name="cAll" onclick="checkAll(this, 'c13')" />全選<br/><br/>
+    <!-- <input type="checkbox" id="cAll" name="cAll" onclick="checkAll(this, 'c13')" />全選<br/><br/> -->
     {% for list in new_list %}
-    <input type="checkbox" id ="{{ list }}" name="c13" value="{{ list }}" />{{ list }}<form>金額：<input id="cost2" type="number" name="金額"></form><br/><br/>
+    <!-- <input type="checkbox" id ="{{ list }}" name="c13" value="{{ list }}" />{{ list }} -->
+    <form>{{ list }}-->金額：<input id="cost2" type="number" name="金額"></form><br/><br/>
     <!-- <p><strong><form>金額：<input id="cost2" type="number" name="金額"></form></strong></p> -->
     {% endfor %}
     </div>
