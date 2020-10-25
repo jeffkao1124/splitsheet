@@ -75,7 +75,7 @@
 
     	function pushMoney(item2) {
 
-		if (item2 == ''') {  //資料檢查
+		if (item2 == '') {
             alert('每個項目都必須輸入！');
             return;
         }
@@ -83,11 +83,11 @@
             alert("項目裡不能有空格！");
             return;
         }
-        var msg = "@分帳 "+item2+" ";  //回傳訊息字串
+        var msg2 = "@分帳 "+item2+" ";  //回傳訊息字串
 
         		liff.sendMessages([  //推播訊息
 			{ type: 'text',
-			  text: msg 
+			  text: msg2
 			},
 		])
 			.then(() => {
@@ -310,7 +310,7 @@ document.getElementById("btnhref").href ="javascript:divShow()";
         {% endfor %}
     </select>
 </span> </div>
-<a class="button3" type="button" name="ok" id="sure2" value="確認送出">確認</a><br></br>
+<a class="button4" type="button" name="ok" id="sure2" value="確認送出">確認</a><br></br>
 </div>
 </div>
 </body>
