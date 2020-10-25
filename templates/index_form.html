@@ -26,15 +26,11 @@
             alert('每個項目都必須輸入！');
             return;
         }
-
-        if (item.indexOf(" ") == -1) {
-            continue;
-        } else {
-            alert("項目中不能有空格！");
+        if(RegExp(/ /).exec(item)){
+            alert("項目裡不能有空格！");
             return;
         }
-
-        var form = document.getElementById("form_name");
+        var form = document.getElementById("form_name");             //幣別
         for(var i=0; i<form.category.length;i++){
                 if(form.category[i].checked){
                     var category = form.category[i].value;
@@ -42,16 +38,14 @@
             }
 
         var tag = document.getElementById("form_tag");
-        for(var i=0; i<tag.tagName.length;i++){
+        
+        for(var i=0; i<tag.tagName.length;i++){                                   //分類
                 if(tag.tagName[i].checked){
                     var tagName =tag.tagName[i].value;
                 }
             }
         
-        var msg = "@分帳 ";  //回傳訊息字串
-		msg = msg + category + item ;
-        msg = msg + tagName + " ";
-        msg = msg + cost + " ";
+        var msg = "@分帳 "+category+item+tagName+" "+cost+" ";  //回傳訊息字串
         payer = document.getElementById("number").value;
         if (payer == '請選擇'){
             alert('請重新選擇代墊者！');
@@ -209,7 +203,7 @@ document.getElementById("btnhref").href ="javascript:divShow()";
         <label><input name="category" type="radio" value="JPY/">日圓</label>
 		<label><input name="category" type="radio" value="USD/">美元</label>
         <label><input name="category" type="radio" value="EUR/">歐元</label>
-    <br/><br/>
+    <br/><br/></form>
     <!--<p><strong><form>代墊者：<input id="payer" type="text" name="欄位名稱"></strong></p></form>-->
     <style>
         .text{
