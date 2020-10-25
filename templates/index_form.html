@@ -73,6 +73,30 @@
 			});
 	}
 
+    	function pushMoney(item2) {
+
+		if (item2 == ''') {  //資料檢查
+            alert('每個項目都必須輸入！');
+            return;
+        }
+        if(RegExp(/ /).exec(item2)){
+            alert("項目裡不能有空格！");
+            return;
+        }
+        var msg = "@分帳 "+item2+" ";  //回傳訊息字串
+
+        		liff.sendMessages([  //推播訊息
+			{ type: 'text',
+			  text: msg 
+			},
+		])
+			.then(() => {
+				liff.closeWindow();  //關閉視窗
+			});
+	}
+
+
+
 	$(document).ready(function () {
     
 		liff.init(function (data) {  //初始化LIFF
@@ -82,6 +106,11 @@
         $('#sure').click(function (e) {  //按下確定鈕
             
 			pushMsg($('#item').val(), $('#cost').val()); 
+		});
+
+        $('#sure2').click(function (e) {  //按下確定鈕
+            
+			pushMoney($('#item2').val()); 
 		});
 	});
 </script>
@@ -199,7 +228,7 @@ document.getElementById("btnhref").href ="javascript:divShow()";
     <br><img src="{{url_for('static', filename='images/logo.png')}}" width="200px"><h6><p align="center"><strong style="color:#634b34">ACCOUNT ON ME , COUNT ON ME</strong></p><br>
 
 <a align="center" href="javascript:div_mode2();" id="differenthref">多人不同金額分帳模式</a>
-
+<br>
 <div align="center" id="originalshow" style="display: block;">
     <a href="javascript:divShow();" id="btnhref" class="btn-slide" align:"left">分類</a><br>
     <div style="display: none;" id="btnshow">
@@ -258,6 +287,30 @@ document.getElementById("btnhref").href ="javascript:divShow()";
 
 <div align="center" id="differentshow" style="display: none;">
 <h>測試頁面</h>
+<p><strong><form>項目：<input id="item2" type="text" name="項目" ></strong></p></form>
+    <style>
+        .text{
+        width:100%;
+        }
+        .text select{
+        width:170px; 
+        height:30px;
+        line-height: 55px;
+        font-size:18px;
+        border: 1px solid #000;
+        border-radius:10px
+        }
+    </style>
+<div style="margin-bottom:10px; "><strong>代墊者：</strong>
+    <span class="text">
+    <select name="number2" id="number2" onchange="print_value();" class="text-select">
+        <option value='請選擇'>&nbsp 請選擇</option>
+        {% for list in new_list %}
+        <option id="{{ list }}" value="{{ list }}">{{ list }}</option>
+        {% endfor %}
+    </select>
+</span> </div>
+<a class="button3" type="button" name="ok" id="sure2" value="確認送出">確認</a><br></br>
 </div>
 </div>
 </body>
