@@ -83,7 +83,12 @@
             alert("項目裡不能有空格！");
             return;
         }
-        var msg2 = "@分帳 "+item2+" ";  //回傳訊息字串
+        payer2 = document.getElementById("number2").value;
+        if (payer2 == '請選擇'){
+            alert('請重新選擇代墊者！');
+            return;
+        }
+        var msg2 = "@分帳 "+item2+" "+payer2;  //回傳訊息字串
 
         		liff.sendMessages([  //推播訊息
 			{ type: 'text',
@@ -310,7 +315,7 @@ document.getElementById("btnhref").href ="javascript:divShow()";
         {% endfor %}
     </select>
 </span> </div>
-<a class="button4" type="button" name="ok" id="sure2" value="確認送出">確認</a><br></br>
+<a class="button3" type="button" name="ok" id="sure2" value="確認送出">確認</a><br></br>
 </div>
 </div>
 </body>
