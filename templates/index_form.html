@@ -98,7 +98,7 @@
         for(var j = 0; j< lisLen ; j++){
 	        lis[j].index = j;
             if(obj[j].checked){
-            sum+=lis[j].value;
+            sum+=parseFloat(lis[j].value);
             money=money+" "+obj[j].value+" "+lis[j].value;
             }
     }
