@@ -104,14 +104,6 @@
     }
         var msg2 = "@分帳 "+item2+" "+sum+" "+payer2+money;  //回傳訊息字串
 
-        // var obj=document.getElementsByName("c13");
-        // var selected=[];
-        // for (var i=0; i<obj.length; i++) {
-        //     if (obj[i].checked) {
-        //     msg2 = msg2 +obj[i].value +" ";
-
-        //   }
-        // }
 
         		liff.sendMessages([  //推播訊息
 			{ type: 'text',
@@ -291,7 +283,7 @@ document.getElementById("btnhref").href ="javascript:divShow()";
     <br><img src="{{url_for('static', filename='images/logo.png')}}" width="200px"><h6><p align="center"><strong style="color:#634b34">ACCOUNT ON ME , COUNT ON ME</strong></p><br>
 
 <a align="center" href="javascript:div_mode2();" id="differenthref" class="button2">切換成多人不同金額分帳模式</a>
-<br>
+<br><br/>
 <div align="center" id="originalshow" style="display: block;">
     <a href="javascript:divShow();" id="btnhref" class="btn-slide" align:"left">分類</a><br>
     <div style="display: none;" id="btnshow">
