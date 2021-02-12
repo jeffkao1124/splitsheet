@@ -48,7 +48,7 @@
         var msg = "@分帳 "+category+item+tagName+" "+cost+" ";  //回傳訊息字串
         payer = document.getElementById("number").value;
         if (payer == '請選擇'){
-            alert('請重新選擇代墊者！');
+            alert('請重新選擇付帳的人！');
             return;
         }
         msg = msg + payer + " ";
@@ -85,7 +85,7 @@
         }
         payer2 = document.getElementById("number2").value;
         if (payer2 == '請選擇'){
-            alert('請重新選擇代墊者！');
+            alert('請重新選擇付帳的人！');
             return;
         }
         var money="";
@@ -285,7 +285,7 @@ document.getElementById("btnhref").href ="javascript:divShow()";
 <a align="center" href="javascript:div_mode2();" id="differenthref" class="button2">切換成多人不同金額分帳模式</a>
 <br><br/>
 <div align="center" id="originalshow" style="display: block;">
-    <a href="javascript:divShow();" id="btnhref" class="btn-slide" align:"left">分類</a><br>
+    <a href="javascript:divShow();" id="btnhref" class="btn-slide" align="left">分類</a><br>
     <div style="display: none;" id="btnshow">
     <br/>
     <form name="form_tag" id="form_tag">
@@ -297,9 +297,9 @@ document.getElementById("btnhref").href ="javascript:divShow()";
     
     </div>
 <br/>
-    <p><strong><form>項目：<input id="item" type="text" name="項目" ></strong></p></form>
-    <p><strong><form>金額：<input id="cost" type="number" name="金額"></strong></p></form>
-	<form name="form_name" id="form_name">
+    <p><strong><form>項目：  <input id="item" type="text" name="項目" ></strong></p></form>
+    <p><strong><form>金額：  <input id="cost" type="number" name="金額"></strong></p></form>
+	<form name="form_name" id="form_name">幣別：
         <label><input name="category" type="radio" value="" checked>台幣</label>
         <label><input name="category" type="radio" value="JPY/">日圓</label>
 		<label><input name="category" type="radio" value="USD/">美元</label>
@@ -311,7 +311,7 @@ document.getElementById("btnhref").href ="javascript:divShow()";
         width:100%;
         }
         .text select{
-        width:170px; 
+        width:200px; 
         height:30px;
         line-height: 55px;
         font-size:18px;
@@ -319,7 +319,7 @@ document.getElementById("btnhref").href ="javascript:divShow()";
         border-radius:10px
         }
     </style>
-    <div style="margin-bottom:10px; "><strong>幫忙付帳的人：</strong>
+    <div style="margin-bottom:10px; "><strong>Step1--請選擇付帳的人：</strong><br/><br/>
     <span class="text">
     <select name="number" id="number" onchange="print_value();" class="text-select">
         <option value='請選擇'>&nbsp 請選擇</option>
@@ -329,8 +329,8 @@ document.getElementById("btnhref").href ="javascript:divShow()";
     </select>
 </span> </div>
     <p id="result" type="hidden" name="欄位名稱"></p>
-    <div style="margin:10px; "><p><strong> 請勾選分攤該筆帳的人：</strong></p></div>
-    <div style="margin-left:1px">
+    <div style="margin:20px; "><p><strong> Step2--請勾選分攤該筆帳的人：</strong></p></div>
+    <div style="margin-left: 5px">
     <input type="checkbox" id="cAll" name="cAll" onclick="checkAll(this, 'c14')" />全選<br/><br/>
     {% for list in new_list %}
     <input type="checkbox" id ="{{ list }}" name="c14" value="{{ list }}" />{{ list }}<br/><br/>
