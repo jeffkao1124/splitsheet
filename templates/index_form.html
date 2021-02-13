@@ -95,12 +95,6 @@
         var lisLen = lis.length;
         var selected=[];
         var sum=0;
-
-        if (lis=[]){
-            alert('請勾選分攤此筆帳的人！'); //防呆
-            return;
-        }
-
         for(var j = 0; j< lisLen ; j++){
 	        lis[j].index = j;
             if(obj[j].checked){
