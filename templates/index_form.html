@@ -55,12 +55,17 @@
 
         var obj=document.getElementsByName("c14");
         var selected=[];
-        for (var i=0; i<obj.length; i++) {
+        for (var i=0,j=0; i<obj.length; i++) {
             if (obj[i].checked) {
+            j++;
             msg = msg +obj[i].value +" ";
-
           }
         }
+        if (j == 0) {
+            alert('必須勾選分帳者才能送出！');
+            return;
+        }
+
         
 
 		liff.sendMessages([  //推播訊息
