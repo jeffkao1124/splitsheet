@@ -100,13 +100,18 @@
         var lisLen = lis.length;
         var selected=[];
         var sum=0;
-        for(var j = 0; j< lisLen ; j++){
+        for(var j = 0,k = 0; j< lisLen ; j++){
 	        lis[j].index = j;
             if(obj[j].checked){
+            k++;
             sum+=parseFloat(lis[j].value);
             money=money+" "+obj[j].value+" "+lis[j].value;
             }
     }
+    		if (k == 0) {
+            alert('必須勾選分帳者才能送出！');
+            return;
+        }
         var msg2 = "@分帳 "+item2+" "+sum+" "+payer2+money;  //回傳訊息字串
 
 
